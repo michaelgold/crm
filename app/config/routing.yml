@@ -27,3 +27,5 @@ oro_auto_routing:
 oro_expose:
     resource: .
     type:     oro_expose
+
+
