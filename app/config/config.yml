@@ -108,6 +108,12 @@ services:
          class: Twig_Extensions_Extension_Intl
          tags:
              - { name: twig.extension }
+    empiriclyapp.datagrid:
+         class: 'Empiricly\Bundle\AppBundle\EventListener\GridListener'
+         arguments:
+             - @service_container
+         tags:
+             - { name: kernel.event_listener, event: oro_datagrid.datagrid.build.before, method: onBuildBefore }
 
 escape_wsse_authentication:
     authentication_provider_class: Oro\Bundle\UserBundle\Security\WsseAuthProvider
